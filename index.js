@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { connectDB } = require('./Server');
+const  connectDB  = require('./Server');
 const { ErrorHandeler } = require('./Middleware/ErrorHandeler');
 const app = express();
 const dotenv = require('dotenv').config();
@@ -20,7 +20,7 @@ app.listen(port, () => {
 app.all('*', (req, res) => {
     res.status(404).json({
         status: 'fail',
-        message: `Can't find ${req.originalUrl} on this server!`
+        message: `Can't find ${req?.originalUrl} on this server!`
     });
 })
 /*error handeler*/
